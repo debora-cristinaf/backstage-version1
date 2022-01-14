@@ -1,8 +1,8 @@
-site_name: Root docs
+site_name: "scaffolded-component"
+site_description: "This is an auto generated backstage documentation component"
 
 nav:
-  - Home: index.md
+  - Introduction: index.md
 
 plugins:
-  - monorepo
   - techdocs-core
