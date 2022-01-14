@@ -1,7 +1,8 @@
-site_name: 'example-docs'
+site_name: Root docs
 
 nav:
   - Home: index.md
 
 plugins:
+  - monorepo
   - techdocs-core

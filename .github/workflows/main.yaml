@@ -35,6 +35,14 @@ jobs:
           node-version: '14.x'
       - run: yarn install --frozen-lockfile
       - run: yarn tsc
+
+      - name: build techdocs-cli
+        working-directory: packages/techdocs-cli
+        run: yarn build
+
+      - name: Install mkdocs & techdocs-core
+        run: python -m pip install mkdocs-techdocs-core
+
       - run: yarn build
         env:
           BASE_URL_BACK_END: ${{ secrets.BASE_URL_BACK_END }}
