@@ -1,5 +1,7 @@
 site_name: "scaffolded-component"
 site_description: "This is an auto generated backstage documentation component"
+repo_url: https://github.com/debora-cristinaf/backstage-version1/blob/master
+edit_uri: docs
 
 nav:
   - Introduction: index.md
