@@ -16,6 +16,10 @@ WORKDIR /app
 # Copy repo skeleton first, to avoid unnecessary docker cache invalidation.
 # The skeleton contains the package.json of each package in the monorepo,
 # and along with yarn.lock and the root package.json, that's enough to run yarn install.
+
+RUN apt update && apt install -y python3 python3-pip
+RUN pip3 install mkdocs-techdocs-core==0.2.0
+
 COPY yarn.lock package.json packages/backend/dist/skeleton.tar.gz ./
 RUN tar xzf skeleton.tar.gz && rm skeleton.tar.gz
 
@@ -24,9 +28,5 @@ RUN yarn install --frozen-lockfile --production --network-timeout 300000 && rm -
 # Then copy the rest of the backend bundle, along with any other files we might want.
 COPY packages/backend/dist/bundle.tar.gz app-config.yaml ./
 RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
-
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install mkdocs-techdocs-core==0.2.2
-
 
 CMD ["node", "packages/backend", "--config", "app-config.yaml"]
