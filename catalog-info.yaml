@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage-version1
-  description: An example of a Backstage application.
-  # Example for optional annotations
+  name: "scaffolded-component"
+  description: "This is an auto generated backstage documentation component"
   annotations:
+    github.com/project-slug: debora-cristinaf/backstage-version1
     backstage.io/techdocs-ref: dir:.
 spec:
-  type: website
-  owner: john@example.com
+  type: documentation
   lifecycle: experimental
+  owner: "team-a"
