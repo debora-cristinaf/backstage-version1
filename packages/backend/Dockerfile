@@ -25,6 +25,9 @@ RUN yarn install --frozen-lockfile --production --network-timeout 300000 && rm -
 COPY packages/backend/dist/bundle.tar.gz app-config.yaml ./
 RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
 
+RUN apt-get update && apt-get install -y python3 python3-pip
+RUN pip3 install mkdocs-techdocs-core==0.2.2
+
 EXPOSE 7000
 
 CMD ["node", "packages/backend", "--config", "app-config.yaml"]
