@@ -55,8 +55,8 @@
     "luxon": "^2.0.2",
     "minimatch": "^3.0.3",
     "morgan": "^1.10.0",
-    "node-fetch": "^2.6.1",
     "node-cache": "^5.1.2",
+    "node-fetch": "^2.6.1",
     "openid-client": "^4.2.1",
     "passport": "^0.4.1",
     "passport-bitbucket-oauth2": "^0.1.2",
@@ -86,7 +86,7 @@
     "@types/passport-strategy": "^0.2.35",
     "@types/uuid": "^8.3.3",
     "@types/xml2js": "^0.4.7",
-    "msw": "^0.35.0"
+    "msw": "^0.36.4"
   },
   "files": [
     "dist",
